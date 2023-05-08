@@ -1,0 +1,992 @@
+{
+    "birth_info": {
+        "note": {
+            "birth_date": "from persona[birth_year], persona[birth_month], persona[birth_day]",
+            "location0": "from persona[birth_city]",
+            "location1": "from persona[birth_country]",
+            "parent0": "from persona[biological_mom_name]",
+            "parent1": "from persona[biological_dad_name]"
+        },
+        "templates": {
+            "0": {
+                "txt": "I was born on {birth_date} in {location0}, {location1}. My parents are {parent0} and {parent1}.",
+                "questions": {
+                    "where": [
+                        "where was I born?",
+                        "{location0}, {location1}"
+                    ],
+                    "when": [
+                        "when was I born?",
+                        "{birth_date}"
+                    ],
+                    "who": [
+                        "who are my parents?",
+                        "{parent0} and {parent1}"
+                    ]
+                }
+            },
+            "1": {
+                "txt": "My birthday is {birth_date}. I was born in {location0}, {location1}.",
+                "questions": {
+                    "where": [
+                        "where was I born?",
+                        "{location0}, {location1}"
+                    ],
+                    "when": [
+                        "when was I born?",
+                        "{birth_date}"
+                    ]
+                }
+            },
+            "2": {
+                "txt": "I was born on {birth_date} in {location0}, {location1}.",
+                "questions": {
+                    "where": [
+                        "where was I born?",
+                        "{location0}, {location1}"
+                    ],
+                    "when": [
+                        "when was I born?",
+                        "{birth_date}"
+                    ]
+                }
+            },
+            "3": {
+                "txt": "My parents are {parent0} and {parent1}.",
+                "questions": {
+                    "who": [
+                        "who are my parents?",
+                        "{parent0} and {parent1}"
+                    ]
+                }
+            }
+        }
+    },
+    "school_move": {
+        "note": {
+            "people_str": "a sample of people from persona[biologial_mom_name], persona[biological_dad_name], persona[sibling_names]",
+            "school": "persona[college_location][0]",
+            "location": "persona[college_location][1]",
+            "date": "randomly generated date by the generator based on the year of move from the persona"
+        },
+        "alone": {
+            "templates": {
+                "0": {
+                    "txt": "I moved to {location} on {date} to start school at {school}.",
+                    "questions": {
+                        "why": [
+                            "why did I move to {location}?",
+                            "to attend {school}"
+                        ],
+                        "where": [
+                            "where did I move to on {date}?",
+                            "{location}"
+                        ],
+                        "when": [
+                            "when did I move to {location} to attend {school}?",
+                            "{date}"
+                        ]
+                    }
+                },
+                "1": {
+                    "txt": "I moved to {location} on {date} to start school at {school}.",
+                    "questions": {
+                        "why": [
+                            "why did I move to {location}?",
+                            "to attend {school}"
+                        ],
+                        "where": [
+                            "where did I move to on {date}?",
+                            "{location}"
+                        ]
+                    }
+                },
+                "2": {
+                    "txt": "I moved to {location} on {date} for school.",
+                    "questions": {
+                        "why": [
+                            "why did I move to {location}?",
+                            "to attend school"
+                        ],
+                        "where": [
+                            "where did I move to on {date}?",
+                            "{location}"
+                        ]
+                    }
+                }
+            }
+        },
+        "with_company": {
+            "templates": {
+                "0": {
+                    "txt": "I moved to {location} to attend {school}. {people_str} helped me with the move. I am looking forward to starting school.",
+                    "questions": {
+                        "who": [
+                            "who helped me move to {school}?",
+                            "{people_str}"
+                        ],
+                        "why": [
+                            "why did I move to {location}?",
+                            "to attend {school}"
+                        ],
+                        "where": [
+                            "where did I move to on {date}?",
+                            "{location}"
+                        ],
+                        "when": [
+                            "when did I move to {location} to attend {school}?",
+                            "{date}"
+                        ]
+                    }
+                },
+                "1": {
+                    "txt": "I moved to {location} to attend {school}. Luckily, {people_str} helped me with the move.",
+                    "questions": {
+                        "who": [
+                            "who helped me move to {school}?",
+                            "{people_str}"
+                        ],
+                        "why": [
+                            "why did I move to {location}?",
+                            "to attend {school}"
+                        ],
+                        "where": [
+                            "where did I move to on {date}?",
+                            "{location}"
+                        ],
+                        "when": [
+                            "when did I move to {location} to attend {school}?",
+                            "{date}"
+                        ]
+                    }
+                },
+                "2": {
+                    "txt": "I moved to {location} with the help of {people_str}. I'll be starting {school} there.",
+                    "questions": {
+                        "who": [
+                            "who helped me move to {school}?",
+                            "{people_str}"
+                        ],
+                        "why": [
+                            "why did I move to {location}?",
+                            "to attend {school}"
+                        ],
+                        "where": [
+                            "where did I move to on {date}?",
+                            "{location}"
+                        ],
+                        "when": [
+                            "when did I move to {location} to attend {school}?",
+                            "{date}"
+                        ]
+                    }
+                }
+            }
+        }
+    },
+    "marriage": {
+        "note": {
+            "partner_name": "persona[partner_names][i]",
+            "location": "a random item in location_dict[marriage] in data.py",
+            "married_date": "randomly generated based on the year of marriage from persona"
+        },
+        "templates": {
+            "0": {
+                "txt": "{partner_name} and I got married on {married_date} in {location}.",
+                "questions": {
+                    "when": [
+                        "when did {partner_name} and I get married?",
+                        "{married_date}"
+                    ],
+                    "where": [
+                        "where did {partner_name} and I get marriage?",
+                        "{location}"
+                    ]
+                }
+            },
+            "1": {
+                "txt": "I married {partner_name} on {married_date} in {location}.",
+                "questions": {
+                    "when": [
+                        "when did {partner_name} and I get married?",
+                        "{married_date}"
+                    ],
+                    "where": [
+                        "where did {partner_name} and I get marriage?",
+                        "{location}"
+                    ]
+                }
+            },
+            "2": {
+                "txt": "I married {partner_name} on {married_date}.",
+                "questions": {
+                    "when": [
+                        "when did {partner_name} and I get married?",
+                        "{married_date}"
+                    ]
+                }
+            },
+            "3": {
+                "txt": "I got married to {partner_name} on {married_date} in {location}.",
+                "questions": {
+                    "when": [
+                        "when did {partner_name} and I get married?",
+                        "{married_date}"
+                    ],
+                    "where": [
+                        "where did {partner_name} and I get marriage?",
+                        "{location}"
+                    ]
+                }
+            },
+            "4": {
+                "txt": "I got married in {location}.",
+                "questions": {
+                    "where": [
+                        "where did I get married?",
+                        "{location}"
+                    ]
+                }
+            }
+        }
+    },
+    "job_move": {
+        "note": {
+            "event_desc": "hardcoded in episodeGenerator now -- [moving to {location} for a new job]",
+            "people_str": "a list of people from persona. contains partners name if married and kids names if they have kids. persona[partners_names][i], persona[kids_names][i]",
+            "location": "randomly generated from settings.cities instantiated in generateDB.py",
+            "date": "randomly generated based on persona[started_job]",
+            "transportation": "from settings.transportation in generateDB.py"
+        },
+        "alone": {
+            "templates": {
+                "0": {
+                    "txt": "On {date}, I moved to {location} start a new job.",
+                    "questions": {
+                        "why": [
+                            "why did I move to {location}?",
+                            "{event_desc}"
+                        ],
+                        "where": [
+                            "where did I move to on {date}?",
+                            "{location}"
+                        ],
+                        "when": [
+                            "when did I move?",
+                            "{date}"
+                        ]
+                    }
+                },
+                "1": {
+                    "txt": "I moved to {location} for a new job on {date}.",
+                    "questions": {
+                        "why": [
+                            "why did I move to {location}?",
+                            "{event_desc}"
+                        ],
+                        "where": [
+                            "where did I move to on {date}?",
+                            "{location}"
+                        ],
+                        "when": [
+                            "when did I move?",
+                            "{date}"
+                        ]
+                    }
+                },
+                "2": {
+                    "txt": "I moved to {location} on {date} because of my job.",
+                    "questions": {
+                        "why": [
+                            "why did I move to {location}?",
+                            "{event_desc}"
+                        ],
+                        "where": [
+                            "where did I move to on {date}?",
+                            "{location}"
+                        ],
+                        "when": [
+                            "when did I move?",
+                            "{date}"
+                        ]
+                    }
+                },
+                "3": {
+                    "txt": "I moved to {location} because of a new job.",
+                    "questions": {
+                        "why": [
+                            "why did I move to {location}?",
+                            "{event_desc}"
+                        ]
+                    }
+                }
+            }
+        },
+        "with_company": {
+            "templates": {
+                "0": {
+                    "txt": "On {date}, I moved to {location} to start a new job. I moved there by {transportation} with {people_str}.",
+                    "questions": {
+                        "why": [
+                            "why did I move to {location}?",
+                            "{event_desc}"
+                        ],
+                        "where": [
+                            "where did I move to on {date}?",
+                            "{location}"
+                        ],
+                        "when": [
+                            "when did I move?",
+                            "{date}"
+                        ],
+                        "who": [
+                            "who did I move with to {location}?",
+                            "{people_str}"
+                        ]
+                    }
+                },
+                "1": {
+                    "txt": "I moved to {location} with {people_str} on {date}. I'll be starting a new job there.",
+                    "questions": {
+                        "why": [
+                            "why did I move to {location}?",
+                            "{event_desc}"
+                        ],
+                        "where": [
+                            "where did I move to on {date}?",
+                            "{location}"
+                        ],
+                        "when": [
+                            "when did I move?",
+                            "{date}"
+                        ],
+                        "who": [
+                            "who did I move with to {location}?",
+                            "{people_str}"
+                        ]
+                    }
+                },
+                "2": {
+                    "txt": "I moved to {location} for a new job on {date}. I moved there with {people_str}.",
+                    "questions": {
+                        "why": [
+                            "why did I move to {location}?",
+                            "{event_desc}"
+                        ],
+                        "where": [
+                            "where did I move to on {date}?",
+                            "{location}"
+                        ],
+                        "when": [
+                            "when did I move?",
+                            "{date}"
+                        ],
+                        "who": [
+                            "who did I move with to {location}?",
+                            "{people_str}"
+                        ]
+                    }
+                },
+                "3": {
+                    "txt": "I moved to {location} on {date} because of my job. I moved there with {people_str}.",
+                    "questions": {
+                        "why": [
+                            "why did I move to {location}?",
+                            "{event_desc}"
+                        ],
+                        "where": [
+                            "where did I move to on {date}?",
+                            "{location}"
+                        ],
+                        "when": [
+                            "when did I move?",
+                            "{date}"
+                        ],
+                        "who": [
+                            "who did I move with to {location}?",
+                            "{people_str}"
+                        ]
+                    }
+                },
+                "4": {
+                    "txt": "I moved to {location} with {people_str} because of a new job.",
+                    "questions": {
+                        "why": [
+                            "why did I move to {location}?",
+                            "{event_desc}"
+                        ],
+                        "who": [
+                            "who did I move with to {location}?",
+                            "{people_str}"
+                        ]
+                    }
+                }
+            }
+        }
+    },
+  "travel": {
+        "note": {
+            "destination":"a random pick from travel_db.keys() in data.py",
+            "people_str": "can by the string myself or a subset of people from parents/friends/family. data about parents/friends/family are taken from persona[biological_mom/dad_nam], persona[close_friends_names], persona[partner_names]+persona[kids_names]",
+            "duration": "a random number between 3 and 15",
+            "trip_start_date":"randomly generated date from the current year"
+        },
+        "alone": {
+            "templates": {
+                "0": {
+                    "txt": "I went to {destination} by myself for {duration} days on {trip_start_date}",
+                    "questions": {
+                        "where": ["where did I go on {trip_start_date}?", "{destination}"],
+                        "when": ["when did I go to {destination}?", "{trip_start_date}"],
+                        "how": ["How long did I stay in {destination}?", "{duration} days"]
+                    }
+                },
+                "1": {
+                    "txt": "On {trip_start_date} I visited {destination} on my own for {duration} days", 
+                    "questions": {
+                        "where": ["where did I go on {trip_start_date}?", "{destination}"],
+                        "when": ["when did I go to {destination}?", "{trip_start_date}"],
+                        "how": ["How long did I stay in {destination}?", "{duration} days"]
+                    }
+                },
+                "2": {
+                    "txt": "I traveled to {destination} for {duration} days starting on {trip_start_date}",
+                    "questions": {
+                        "where": ["where did I go on {trip_start_date}?", "{destination}"],
+                        "when": ["when did I go to {destination}?", "{trip_start_date}"],
+                        "how": ["How long did I stay in {destination}?", "{duration} days"]
+                    }
+                }
+            }
+        },
+        "with_company": {
+            "templates": {
+                "0": {
+                    "txt": "On {trip_start_date} {people_str} and I went to {destination} together for {duration} days ",
+                    "questions": {
+                        "who": ["who did I go with to {destination} on {trip_start_date}?", "{people_str}"],
+                        "who1": ["who did I go with to {destination}?", "{people_str}"],
+                        "where": ["where did I go on {trip_start_date}?", "{destination}"],
+                        "when": ["when did I go to {destination}?", "{trip_start_date}"],
+                        "when1": ["when did I go to {destination} with {people_str} ?", "{trip_start_date}"],
+                        "how": ["How long did I stay in {destination}?", "{duration}"]
+                    }
+
+                },
+                "1": {
+                    "txt": "I visited {destination} for {duration} days with {people_str} starting on {trip_start_date}", 
+                    "questions": {
+                        "who": ["who did I go with to {destination} on {trip_start_date}?", "{people_str}"],
+                        "who1": ["who did I go with to {destination}?", "{people_str}"],
+                        "where": ["where did I go on {trip_start_date}?", "{destination}"],
+                        "when": ["when did I go to {destination}?", "{trip_start_date}"],
+                        "when1": ["when did I go to {destination} with {people_str} ?", "{trip_start_date}"],
+                        "how": ["How long did I stay in {destination}?", "{duration}"]
+                    }
+                },
+                "2": {
+                    "txt": "On {trip_start_date} {people_str} and I went to {destination} together for {duration} days ",
+                    "questions": {
+                        "who": ["who did I go with to {destination} on {trip_start_date}?", "{people_str}"],
+                        "who1": ["who did I go with to {destination}?", "{people_str}"],
+                        "where": ["where did I go on {trip_start_date}?", "{destination}"],
+                        "when": ["when did I go to {destination}?", "{trip_start_date}"],
+                        "when1": ["when did I go to {destination} with {people_str} ?", "{trip_start_date}"],
+                        "how": ["How long did I stay in {destination}?", "{duration}"]
+                    }
+                }
+            }
+        },
+        "places_visited": {
+            "note": {
+                "destination": "a city name from travel_db.keys() in data.py",
+                "temp_location": "a random pick from travel_db[destination][places_to_visit]",
+                "shorten_date": "only year and month are shown %Y/%m from temp_date_str",
+                "people_str": "if with_company, this string contains a list of people names",
+                "tourist_action": "a random pick form settings.tourist_actions in generate_DB.py. probabilities are under settings.tourist_actions_prob",
+                "temp_date_str": "this is the day temp_location is visited",
+                "emotion": "a random pick from settings.tourist_emotions in generateDB.py. probabilities are under settings.emotions_prob"
+            },
+            "alone": {
+                "templates": {
+                    "0": {
+                        "txt": "During my trip to {destination}, I visited {temp_location} on {shorten_date}. ",
+                        "questions": {
+                            "where": ["where did I visit during my trip to {destination} on {shorten_date}", "{temp_location}"],
+                            "when": ["when did I visit {temp_location} during my trip to {destination}", "{temp_date_str}"],
+                            "when1": ["when did I visit {temp_location}", "{temp_date_str}"]
+                           
+                            }
+                    },
+                    "1": {
+                        "txt": "I visited {temp_location} during my trip to {destination},  on {shorten_date}.",
+                        "questions": {
+                            "where": ["where did I visit during my trip to {destination} on {shorten_date}", "{temp_location}"],
+                            "when": ["when did I visit {temp_location} during my trip to {destination}", "{temp_date_str}"],
+                            "when1": ["when did I visit {temp_location}", "{temp_date_str}"]
+                            
+                            }
+                    },
+                    "2": {
+                        "txt": "During my trip to {destination}, I visited {temp_location}.",
+                        "questions": {
+                            "where": ["where did I visit during my trip to {destination}", "{temp_location}"]
+                            
+                           
+                            }
+                    },
+                    "3": {
+                        "txt": " I visited {temp_location} on {shorten_date}. ",
+                        "questions": {
+                            "where": ["where did I visit  on {shorten_date}", "{temp_location}"],
+                            "when": ["when did I visit {temp_location} ", "{temp_date_str}"]
+                            
+                            }
+                    }
+                }
+            },
+            "with_company": {
+                "templates": {
+                    "0": {
+                        "txt": "During my trip to {destination}, I visited {temp_location} on {shorten_date} with {people_str}.",
+                        "questions": {
+                            "where": ["where did I visit during my trip to {destination} on {shorten_date}", "{temp_location}"],
+                            "when": ["when did I visit {temp_location} during my trip to {destination}", "{temp_date_str}"],
+		            "when1": ["when did I visit {temp_location} ", "{temp_date_str}"],
+                            "who1": ["who went with me to visit {temp_location} ?", "{people_str}"],
+                            "who": ["who went with me to visit {temp_location} during my trip to {destination} on {shorten_date}?", "{people_str}"]
+                        }
+                    }
+                }
+            }
+        },
+        "dining":{
+            "note": {
+                "shorten_date":"only the year and month of dining date in %Y/%m",
+                "food_type": "a random pick from settings.food_type in generateDB.py",
+                "food_location": "a random pick from restaurant_list in travel_db[desctination][restaurants][dining]",
+                "people_str": "a list of people names if with_company",
+                "destination": "the travel destination, a city name",
+                "date": "date of dining"
+            },
+            "alone": {
+                "templates": {
+                    "0": {
+                        "txt": "I ate {food_type} at {food_location} on {dining_date} when I was in {destination}.",
+                        "questions": {
+                            "where": ["where did I have {food_type} during my trip to {destination}", "{food_location}"],
+                            "when": ["when did I eat {food_type} at {food_location} during my trip to {destination}", "{date}"]
+                        }
+
+                    },
+                    "1": {
+                        "txt": " on {date} I ate {food_type} at {food_location}  in {destination}.",
+                        "questions": {
+                            "where": ["where did I have {food_type} during my trip to {destination}", "{food_location}"],
+                            "when": ["when did I eat {food_type} at {food_location} during my trip to {destination}", "{date}"]
+                        }
+                    }
+                }
+            },
+            "with_company": {
+                "templates": {
+                    "0": {
+                        "txt": "I ate {food_type} at {food_location} with {people_str} on  {date} when I was in {destination}.",
+                        "questions": {
+                            "who": ["who did I eat {food_type} with at {food_location} ?", "{people_str}"],
+                            
+                            "who2": ["who did I eat {food_type} with?", "{people_str}"],
+                            "where": ["where did we eat {food_type} during our trip to {destination} on  {date}?", "{food_location}"],
+                            "when": ["when did we eat {food_type} at {food_location} during our trip to {destination}?", "{date}"],
+                            "when1": ["when did we eat at {food_location}?", "{date}"],
+                            "when2": ["when did we eat {food_type}?", "{date}"]
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "pet_care": {
+        "note": {
+           "pet_care_item": "a random choice from settings.pet_care_list, found in generateDB.py",
+           "date": "date of pet care"
+        },
+        "templates": {
+            "0": {
+            "txt": "I took my pet for {pet_care_item} on {date}.",
+            "questions": {
+                "where": ["what did I take my pet for on {date}?", "{pet_care_item}"],
+                "when": ["on which day did I take my pet for {pet_care_item}?", "{date}"]
+            }
+            }
+        }
+    },
+    "medical_care": {
+        "note": {
+            "name": "it is empty if it is personal. it is {my parents for their} if it is for parents. it is {my kidsnames for his/her} if it is for kids",
+            "purpose": "from settings.medical_care_type in generateDB.py",
+            "date": "date of medical checkup",
+	    "year": "this is the year of {date}",
+            "location": "a random pick from settings.medical_care_locations in generateDB.py"
+        },
+        "personal": {
+            "templates": {
+                "0": {
+                "txt": "I went for an {purpose} on {date} at the {location}.",
+                "questions": {
+                    "when": ["when did I go for an {purpose} in {year}?", "{date}"],
+                    "where": ["where did I go for an {purpose} on {date}", "{location}"]
+                }
+                }
+            }
+        },
+        "others":{
+            "templates": {
+                "0":{
+                    "txt": "I took {name} for an {purpose} on {date} at the {location}.",
+                    "questions": {
+                        "when": ["when I go with {name} for an {purpose} in {year}?", "{date}"],
+                        "what": ["what did I do on {date}", "I took {name} for an {purpose}"]
+                    }
+                },
+                "1": {
+                    "txt": "{name} and I went for an {purpose} at the {location} on {date}.",
+                    "questions": {
+                        "when": ["when I go with {name} for an {purpose} in {year}?", "{date}"],
+                        "what": ["what did I do on {date}", "I took {name} for an  {purpose}"]
+                    }
+                }
+            }
+        }
+    },
+    "cooking": {
+        "note": {
+            "bake_or_cook": "the word bake or cook",
+            "baked_or_cooked": "the word baked or cooked consistent with above",
+            "baking_or_cooking": "the word baking or cooking consistent with above",
+            "date": "date of baking/cooking",
+            "cuisine_string": "a random sample of support_db[cuisine_list] or support_db[baking_list] ",
+            "location": "always the string {my place}",
+            "people_str": "a sample of people from parents/family/friends"
+        },
+        "alone": {
+            "templates": {
+                "0": {
+                    "txt": "I {baked_or_cooked} {cuisine_string} by myself on {date} at {location}",
+                    "questions": {
+                        "when": ["when did I {bake_or_cook} {cuisine_string}?", "{date}"],
+                        "what": ["what did I {bake_or_cook} on {date}?", "{cuisine_string}"]
+                    }
+                },
+                "1": {
+                    "txt": "I stayed in and {baked_or_cooked} {cuisine_string} on {date} at {location}",
+                    "questions": {
+                        "when": ["when did I {bake_or_cook} {cuisine_string}?", "{date}"],
+                        "what": ["what did I {bake_or_cook} on {date}?", "{cuisine_string}"]
+                    }
+                }
+            }
+        },
+        "with_company": {
+            "templates": {
+                "0": {
+                    "txt": "I was {baking_or_cooking} {cuisine_string} on {date} with {people_str} at {location}",
+                    "questions": {
+                        "when": ["when did I {bake_or_cook} {cuisine_string} with {people_str}?", "{date}"],
+                        "what": ["what did I {bake_or_cook} on {date}?", "{cuisine_string}"],
+                        "who": ["who was I with when I {baked_or_cooked} {cuisine_string} on {date}?", "{people_str}"]
+                    }
+                },
+                "1": {
+                    "txt": "I entertained {people_str} at {location} on {date} and {bake_or_cook} {cuisine_string}",
+                    "questions": {
+                        "when": ["when did I {bake_or_cook} {cuisine_string} with {people_str}?", "{date}"],
+                        "what": ["what did I {bake_or_cook} on {date}?", "{cuisine_string}"],
+                        "who": ["who was I with when I {baked_or_cooked} {cuisine_string} on {date}?", "{people_str}"]
+                    }
+                },
+                "2": {
+                    "txt": "I really enjoyed {baking_or_cooking} {cuisine_string} on {date} with {people_str} at {location}",
+                    "questions": {
+                        "when": ["when did I {bake_or_cook} {cuisine_string} with {people_str}?", "{date}"],
+                        "what": ["what did I {bake_or_cook} on {date}?", "{cuisine_string}"],
+                        "who": ["who was I with when I {baked_or_cooked} {cuisine_string} on {date}?", "{people_str}"]
+                    }
+                }
+            }
+        }
+    },
+    "dating": {
+        "note": {
+            "people_string": "can be the word {date} or the name of last partner before the current marriage",
+            "date": "date of dating event",
+            "location": "a random choice from support_db[date_location_list]"
+        },
+        "templates": {
+            "0": {
+                "txt": "I went on a date with {people_string} on {date} at {location}",
+                "questions": {
+                    "who": ["who did I go on a date with on {date}", "{people_string}"],
+                    "where": ["where did I go for the date on {date}", "{location}" ]
+                }
+            },
+            "1": {
+                "txt": "On {date}, I took {people_string} on a date to {location}",
+                "questions": {
+                    "who": ["who did I go on a date with on {date}", "{people_string}"],
+                    "where": ["where did I go for the date on {date}", "{location}" ]
+                }
+            }
+        }
+    },
+    "hobbies": {
+        "note": {
+            "people_string": "a random sample of people from parents/family/friends",
+            "hobbies": "random choice from persona[hobbies] running/reading",
+            "date": "the date of acting on the hobby"
+        },
+        "templates": {
+            "0": {
+                "txt": "I spent some time {hobbies} on {date}.",
+                "questions": {
+                    "when" : ["when did I do {hobbies}?", "{date}"],
+                    "what" : ["On {date}, which hobby did I spend time on?", "{hobbies}"]
+                }
+            },
+            "1": {
+                "txt": "I really enjoyed {hobbies} on {date}",
+                "questions": {
+                    "when" : ["when did I do {hobbies}?", "{date}"],
+                    "what" : ["On {date}, which hobby did I spend time on?", "{hobbies}"]
+                }
+            },
+             "2": {
+                "txt": "I spent time {hobbies} on {date} with {people_string}.",
+                "questions": {
+                    "when" : ["when did I spend time on {hobbies} with {people_string}?", "{date}"],
+                    "what" : ["On {date}, which hobby did I spend time on?", "{hobbies}"],
+                    "who": ["who was with me when I was spending time on {hobbies} on {date}?", "{people_string}"]
+                }
+            }
+       }
+    },
+    "exercise": {
+       "note": {
+            "exercise": "a random choice from settings.exercise_list in generateDB.py",
+            "date": "date of exercise",
+            "heart_rate": "a random number between 90 and 165"
+       },
+       "templates": {
+            "0": {
+            "txt": "I did {exercise} on {date}.",
+            "questions": {
+                "which": ["What exercise I did on {date}?", "{exercise}"]
+            }
+            }
+       }
+    },
+    "meal": {
+        "note": {
+            "mealtype": "the word {breakfast}, {lunch}, or {dinner}",
+            "foodtype": "a random choice from settings.breakfast_list or settings.lunchdinner_list in generateDB.py",
+            "date": "date of meal",
+            "people_string": "can be alone or with a sample of people from parents/friends/family"
+        },
+        "templates": {
+            "0": {
+                "txt": "I had {mealtype}. I ate {foodtype}.",
+            "questions": {
+                "what": ["what did I eat for {mealtype} on {date}", "{foodtype}"]
+                }
+            },
+            "1": {
+                "txt": "I ate {foodtype} for {mealtype}.",
+            "questions": {
+                "what": ["what did I eat for {mealtype} on {date}", "{foodtype}"]
+                }
+            },
+            "2": {
+                "txt": "I prepare {foodtype} for {mealtype}.",
+            "questions": {
+                "what": ["what did I eat for {mealtype} on {date}", "{foodtype}"]
+                }
+            },
+            "3": {
+                "txt": "I had {mealtype} with {people_string}. I ate {foodtype}.",
+                "questions": {
+                    "who": ["with whom did I have {mealtype} with on {date}?", "{people_string}"],
+                    "what": ["what did I eat for {mealtype} on {date}", "{foodtype}"]
+                }
+            },
+            "4": {
+                "txt": "I had {foodtype} for {mealtype} with {people_string}",
+                "questions": {
+                    "who": ["with whom did I have {mealtype} with on {date}?", "{people_string}"],
+                    "what": ["what did I eat for {mealtype} on {date}", "{foodtype}"]
+                }
+            }
+        }
+    },
+    "chat": {
+        "note": {
+            "friends": "a random sample of friends",
+            "timeofday": "a random time within range of settings.chat_time_list in generateDB.py. can be {in the morning/in the early afternoon/in the late afternoon/late in the evening/during lunch",
+            "date": "date of chat",
+            "howlong": "length in minutes, a number between 5 - 55 mins"
+        },
+        "templates": {
+            "0": {
+                "txt": "I talked to {friends} for {howlong} minutes {timeofday}.",
+                "questions": {
+                    "howlong": ["how long did I talk to {friends} {timeofday} on {date}?", "{howlong} minutes"],
+                    "who": ["who did I talk to on {date}?", "{friends}"],
+                    "boolean1": ["Did I talk to {friends} on {date}?", "yes"],
+                    "boolean2": ["Did I talk to anyone on {date}?", "yes"]
+                }
+            },
+            "1": {
+                "txt": "I spent {howlong} talking to {friends} on various topics {timeofday}.",
+                "questions": {
+                    "howlong": ["how long did I talk to {friends} {timeofday} on {date}?", "{howlong} minutes"],
+                    "who": ["who did I talk to on {date}?", "{friends}"],
+                    "boolean1": ["Did I talk to {friends} on {date}?", "yes"],
+                    "boolean2": ["Did I talk to anyone on {date}?", "yes"]
+                }
+            }
+        }
+
+    },
+    "read":{
+       "note": {
+            "readtype": "a random choice from settings.daily_read_list in generateDB.py",
+            "date": "date of reading",
+            "howlong": "length of time. a number between 5-55 mins"
+       },
+       "templates": {
+        "0": {
+           "txt": "I spent {howlong} minutes reading {readtype} today.",
+           "questions": {
+                "howlong": ["how long did I spend reading {readtype} on {date}?", "{howlong} minutes"],
+                "what": ["what did I read on {date}?", "{readtype}"],
+                "boolean": ["Did I read on {date}?", "yes"]
+           }
+        },
+        "1": {
+           "txt": "I spent {howlong} minutes on {readtype} today.",
+               "questions": {
+                    "howlong": ["how long did I spend reading {readtype} on {date}?", "{howlong} minutes"],
+                    "what": ["what did I read on {date}?", "{readtype}"],
+                    "boolean": ["Did I read on {date}?", "yes"]
+               }
+            }
+       }
+
+    },
+    "watch tv": {
+       "note": {
+            "watchtype": "a random choice in settings.daily_watch_list in generateDB.py",
+            "date": "date of watching tv",
+            "howlong": "a number between 5-55"
+       },
+       "templates": {
+        "0":{
+           "txt": "I spent {howlong} minutes watching {watchtype} on TV today.",
+           "questions": {
+                "howlong": ["how long was I watching tv on {date}?", "{howlong} minutes"],
+                "what": ["what did I watch on tv on {date}?", "{watchtype}"],
+                "boolean1": ["Did I watch tv on {date}?", "yes"]
+           }
+        },
+        "1":{
+           "txt": "I watched {watchtype} for {howlong} minutes on TV today.",
+           "questions": {
+                "howlong": ["how long was I watching tv on {date}?", "{howlong} minutes"],
+                "what": ["what did I watch on tv on {date}?", "{watchtype}"],
+                "boolean1": ["Did I watch tv on {date}?", "yes"]
+           }
+        }
+       }
+    },
+    "grocery": {
+        "note": {
+            "fruits": "a random sample from settings.fruit_list in generateDB.py",
+            "drinks": "a random sample from settings.drink_list in generateDB.py",
+            "toiletries": "a random sample from settings.toiletry_list in generateDB.py",
+            "date": "date of grocery shopping",
+            "people_string": "can be {myself} or a random sample of parents/friends/family"
+        },
+        "templates": {
+            "0":{
+                "txt": "I went grocery shopping. I bought some {fruits}, {drinks}, and {toiletries}",
+            "questions": {
+                "what": ["what did I buy from the grocery store on {date}?", "{fruits}, {drinks}, and {toiletries}"],
+                "whatfruits": ["what fruits did I buy from the grocery store on {date}?", "{fruits}"],
+                "whatdrinks": ["what drinks did I buy from the grocery store on {date}?", "{drinks}"],
+                "whattoiletries": ["what toiletries did I buy from the grocery store on {date}?", "{toiletries}"]
+                }
+            },
+            "1": {
+                "txt": "I bought some {fruits}, {drinks}, {toiletries} online.",
+            "questions": {
+                "what": ["what did I buy online on {date}?", "{fruits}, {drinks}, and {toiletries}"],
+                "whatfruits": ["what fruits did I buy online on {date}?", "{fruits}"],
+                "whatdrinks": ["what drinks did I buy online on {date}?", "{drinks}"],
+                "whattoiletries": ["what toiletries did I buy online on {date}?", "{toiletries}"]
+                }
+            },
+            "2":{
+                "txt": "I went grocery shopping with {people_string}. I bought some {fruits}, {drinks}, and {toiletries}",
+            "questions": {
+                "what": ["what did I buy from the grocery store on {date}?", "{fruits}, {drinks}, and {toiletries}"],
+                "whatfruits": ["what fruits did I buy from the grocery store on {date}?", "{fruits}"],
+                "whatdrinks": ["what drinks did I buy from the grocery store on {date}?", "{drinks}"],
+                "whattoiletries": ["what toiletries did I buy from the grocery store on {date}?", "{toiletries}"],
+                "who": ["who was with me at the grocery store on {date}?", "{people_string}"]
+                }
+            },
+            "3":{
+                "txt": "I bought some {fruits}, {drinks}, {toiletries} from the grocery store. I saw {people_string} at the grocery store.",
+            "questions": {
+                "what": ["what did I buy from the grocery store on {date}?", "{fruits}, {drinks}, and {toiletries}"],
+                "whatfruits": ["what fruits did I buy from the grocery store on {date}?", "{fruits}"],
+                "whatdrinks": ["what drinks did I buy from the grocery store on {date}?", "{drinks}"],
+                "whattoiletries": ["what toiletries did I buy from the grocery store on {date}?", "{toiletries}"],
+                "who": ["who did I see at the grocery store on {date}?", "{people_string}"]
+                }
+            }
+        }
+    },
+    "college graduation": {
+       "note": {
+            "school": "from persona[college_location][0]",
+            "location": "from persona[college_location][1]",
+            "date": "date of graduation",
+            "howlong": "length in days"
+       },
+       "templates": {
+        "0": {
+            "txt": "I graduated from {school} on {date} after {howlong} days of studying.",
+            "questions": {
+                "when": ["when did I graduate from {school}?", "{date}"],
+                "howlong": ["how long did I take to complete my undergraduate degree?", "{howlong}"]
+            }
+        }
+       }
+    },
+    "graduate school graduation": {
+        "note": {
+            "school": "name of grad school",
+            "date": "date of graduation",
+            "howlong": "difference between date_str and date of moving to college"
+        },
+        "templates": {
+           "0": {
+               "txt": "I completed my graduate school at {school} on {date}.",
+               "questions":{
+                    "when": ["when did I finish my graduate school?", "{date}"],
+                    "howlong": ["how long did it take me to finish graduate school?", "{howlong}"]
+               }
+           }
+       }
+    }
+}

@@ -1,0 +1,41 @@
+start_date,end_date,city,people
+2022/07/22,2022/07/29,"Barcelona, Spain",
+2022/05/19,2022/05/25,"Bangkok, Thailand",
+2021/05/07,2021/05/18,"New Delhi, India",
+2021/02/25,2021/03/04,"Philadelphia, US",
+2020/06/27,2020/07/11,"Bangkok, Thailand",
+2020/04/22,2020/05/07,"Dubai, UAE",
+2019/07/31,2019/08/10,"New York, US",
+2019/05/11,2019/05/24,"Rome, Italy",
+2018/05/28,2018/06/06,"Rome, Italy",
+2018/02/06,2018/02/16,"London, UK",
+2017/04/27,2017/05/12,"Rome, Italy",
+2017/01/19,2017/01/25,"Dubai, UAE",
+
+How many times did I travel to X
+
+count (*)
+from travel-log.csv
+where city == X
+
+When was the first time I traveled to X?
+
+select min(r.start_date)
+from travel-log.csv as r
+where city == X
+
+How many times did I travel to X in year Y
+
+select *
+from travel-log.csv as r
+where city == X AND start_date.year == Y
+
+What are my top N destinations
+
+select TOP N
+from travel-log.csv
+group by city
+order by count(start_date)
+
+
+

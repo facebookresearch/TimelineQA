@@ -1,0 +1,78 @@
+
+How many times did I visit X?
+
+Select count(*)
+from travel_places_visited-log.csv
+where place == X
+
+
+How many places did I visit in Y?
+
+Select count(r.place)
+from travel_places_visited-log.csv as r
+where r.city == Y
+
+Which places in Y did I visit with Z
+
+Select place
+from travel_places_visited-log.csv as r
+where r.city == Y AND Z in r.people
+
+
+
+
+
+start_date,end_date,city,place_visit_date,place,people,action,emotion
+2017-01-19 00:00:00,2017-01-25 00:00:00,"Dubai, UAE",2017/01/20,Burj Khalifa,"parents, friends, family",took a selfie,impressed
+2017-01-19 00:00:00,2017-01-25 00:00:00,"Dubai, UAE",2017/01/21,Dubai Aquarium & Underwater Zoo,"parents, friends, family",took a selfie,happy
+2017-01-19 00:00:00,2017-01-25 00:00:00,"Dubai, UAE",2017/01/22,Miracle Garden,"parents, friends, family",recorded some videos,happy
+2017-04-27 00:00:00,2017-05-12 00:00:00,"Rome, Italy",2017/04/28,The Colosseum and the Arch of Constantine,"parents, friends, family",recorded some videos,happy
+2017-04-27 00:00:00,2017-05-12 00:00:00,"Rome, Italy",2017/04/29,Roman Forum,"parents, friends, family",recorded some videos,special
+2017-04-27 00:00:00,2017-05-12 00:00:00,"Rome, Italy",2017/04/30,Vatican City,"parents, friends, family",recorded some videos,special
+2017-04-27 00:00:00,2017-05-12 00:00:00,"Rome, Italy",2017/05/01,Trevi Fountain,"parents, friends, family",took a selfie,special
+2017-04-27 00:00:00,2017-05-12 00:00:00,"Rome, Italy",2017/05/02,The Pantheon,"parents, friends, family",took a selfie,impressed
+2018-02-06 00:00:00,2018-02-16 00:00:00,"London, UK",2018/02/07,London Eye,"parents, friends, family",bought some souvenirs,impressed
+2018-02-06 00:00:00,2018-02-16 00:00:00,"London, UK",2018/02/08,Hyde Park,"parents, friends, family",took a selfie,happy
+2018-02-06 00:00:00,2018-02-16 00:00:00,"London, UK",2018/02/09,Camden,"parents, friends, family",took a selfie,impressed
+2018-02-06 00:00:00,2018-02-16 00:00:00,"London, UK",2018/02/10,Tower of London,"parents, friends, family",recorded some videos,special
+2018-02-06 00:00:00,2018-02-16 00:00:00,"London, UK",2018/02/11,Westminster,"parents, friends, family",took a selfie,impressed
+2018-05-28 00:00:00,2018-06-06 00:00:00,"Rome, Italy",2018/05/29,The Colosseum and the Arch of Constantine,"parents, friends, family",took a selfie,happy
+2018-05-28 00:00:00,2018-06-06 00:00:00,"Rome, Italy",2018/05/30,Vatican City,"parents, friends, family",took a selfie,impressed
+2018-05-28 00:00:00,2018-06-06 00:00:00,"Rome, Italy",2018/05/31,Trevi Fountain,"parents, friends, family",took a group photo,impressed
+2018-05-28 00:00:00,2018-06-06 00:00:00,"Rome, Italy",2018/06/01,Roman Forum,"parents, friends, family",took a group photo,impressed
+2018-05-28 00:00:00,2018-06-06 00:00:00,"Rome, Italy",2018/06/02,The Pantheon,"parents, friends, family",took a group photo,impressed
+2019-05-11 00:00:00,2019-05-24 00:00:00,"Rome, Italy",2019/05/12,The Pantheon,"parents, friends, family",recorded some videos,special
+2019-05-11 00:00:00,2019-05-24 00:00:00,"Rome, Italy",2019/05/13,Vatican City,"parents, friends, family",took a selfie,happy
+2019-05-11 00:00:00,2019-05-24 00:00:00,"Rome, Italy",2019/05/14,Roman Forum,"parents, friends, family",took a group photo,special
+2019-05-11 00:00:00,2019-05-24 00:00:00,"Rome, Italy",2019/05/15,The Colosseum and the Arch of Constantine,"parents, friends, family",took a selfie,special
+2019-05-11 00:00:00,2019-05-24 00:00:00,"Rome, Italy",2019/05/16,Trevi Fountain,"parents, friends, family",bought some souvenirs,special
+2019-07-31 00:00:00,2019-08-10 00:00:00,"New York, US",2019/08/01,Statue of Liberty,"parents, friends, family",took a selfie,happy
+2019-07-31 00:00:00,2019-08-10 00:00:00,"New York, US",2019/08/02,Rockefeller Center,"parents, friends, family",took a selfie,happy
+2019-07-31 00:00:00,2019-08-10 00:00:00,"New York, US",2019/08/03,Metropolitan Museum of Art,"parents, friends, family",bought some souvenirs,impressed
+2019-07-31 00:00:00,2019-08-10 00:00:00,"New York, US",2019/08/04,Times Square,"parents, friends, family",recorded some videos,happy
+2019-07-31 00:00:00,2019-08-10 00:00:00,"New York, US",2019/08/05,Brooklyn Bridge,"parents, friends, family",took a group photo,happy
+2019-07-31 00:00:00,2019-08-10 00:00:00,"New York, US",2019/08/06,Empire State Building,"parents, friends, family",bought some souvenirs,impressed
+2019-07-31 00:00:00,2019-08-10 00:00:00,"New York, US",2019/08/07,Central Park,"parents, friends, family",bought some souvenirs,happy
+2020-04-22 00:00:00,2020-05-07 00:00:00,"Dubai, UAE",2020/04/23,Miracle Garden,"parents, friends, family",bought some souvenirs,happy
+2020-04-22 00:00:00,2020-05-07 00:00:00,"Dubai, UAE",2020/04/24,Dubai Aquarium & Underwater Zoo,"parents, friends, family",recorded some videos,happy
+2020-04-22 00:00:00,2020-05-07 00:00:00,"Dubai, UAE",2020/04/25,Burj Khalifa,"parents, friends, family",took a selfie,impressed
+2020-06-27 00:00:00,2020-07-11 00:00:00,"Bangkok, Thailand",2020/06/28,National Museum & Wang Na Palace,"parents, friends, family",took a selfie,happy
+2020-06-27 00:00:00,2020-07-11 00:00:00,"Bangkok, Thailand",2020/06/29,Wat Suthat,"parents, friends, family",bought some souvenirs,special
+2020-06-27 00:00:00,2020-07-11 00:00:00,"Bangkok, Thailand",2020/06/30,Wat Traimit,"parents, friends, family",took a group photo,impressed
+2020-06-27 00:00:00,2020-07-11 00:00:00,"Bangkok, Thailand",2020/07/01,Wat Arun,"parents, friends, family",took a group photo,happy
+2020-06-27 00:00:00,2020-07-11 00:00:00,"Bangkok, Thailand",2020/07/02,Grand Palace,"parents, friends, family",took a selfie,special
+2021-02-25 00:00:00,2021-03-04 00:00:00,"Philadelphia, US",2021/02/26,Liberty Bell,"parents, friends, family",took a selfie,impressed
+2021-02-25 00:00:00,2021-03-04 00:00:00,"Philadelphia, US",2021/02/27,Independence Hall,"parents, friends, family",took a group photo,special
+2021-02-25 00:00:00,2021-03-04 00:00:00,"Philadelphia, US",2021/02/28,Ipanema,"parents, friends, family",recorded some videos,impressed
+2021-02-25 00:00:00,2021-03-04 00:00:00,"Philadelphia, US",2021/03/01,Carnaval,"parents, friends, family",took a group photo,happy
+2021-02-25 00:00:00,2021-03-04 00:00:00,"Philadelphia, US",2021/03/02,Philadelphia Museum of Art,"parents, friends, family",recorded some videos,special
+2021-05-07 00:00:00,2021-05-18 00:00:00,"New Delhi, India",2021/05/08,Gurudwara Bangla Sahib,"parents, friends, family",bought some souvenirs,happy
+2021-05-07 00:00:00,2021-05-18 00:00:00,"New Delhi, India",2021/05/09,Lodi Gardens,"parents, friends, family",recorded some videos,impressed
+2021-05-07 00:00:00,2021-05-18 00:00:00,"New Delhi, India",2021/05/10,Qutub Minar,"parents, friends, family",took a selfie,impressed
+2021-05-07 00:00:00,2021-05-18 00:00:00,"New Delhi, India",2021/05/11,The Red Fort,"parents, friends, family",recorded some videos,special
+2021-05-07 00:00:00,2021-05-18 00:00:00,"New Delhi, India",2021/05/12,The Lotus Temple,"parents, friends, family",recorded some videos,happy
+2022-05-19 00:00:00,2022-05-25 00:00:00,"Bangkok, Thailand",2022/05/20,Wat Suthat,"parents, friends, family",recorded some videos,special
+2022-05-19 00:00:00,2022-05-25 00:00:00,"Bangkok, Thailand",2022/05/21,Wat Arun,"parents, friends, family",recorded some videos,happy
+2022-05-19 00:00:00,2022-05-25 00:00:00,"Bangkok, Thailand",2022/05/22,Wat Traimit,"parents, friends, family",recorded some videos,impressed
+2022-05-19 00:00:00,2022-05-25 00:00:00,"Bangkok, Thailand",2022/05/23,Grand Palace,"parents, friends, family",bought some souvenirs,happy
+2022-05-19 00:00:00,2022-05-25 00:00:00,"Bangkok, Thailand",2022/05/24,National Museum & Wang Na Palace,"parents, friends, family",took a selfie,happy
