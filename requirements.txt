@@ -1,0 +1,16 @@
+Python 3.8.5
+pandas
+sys
+getopt
+random
+numpy
+json
+csv
+datetime
+dateutil
+math
+pprint
+string
+os
+
+Install the files. Execute the command as described in the README file.

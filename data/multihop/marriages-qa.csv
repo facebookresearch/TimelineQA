@@ -1,0 +1,18 @@
+married_date,partner_name,location
+1980/11/14,Isaac,my place
+1989/01/06,Jose,my place
+
+How many times did I get married?
+
+Count *
+From marriages-log.csv
+
+When did I first get married?
+
+Select min(married_date)
+from marriages-log.csv
+
+When was the date of my most recent marriage? 
+
+Select max(married_date)
+from marriages-log.csv

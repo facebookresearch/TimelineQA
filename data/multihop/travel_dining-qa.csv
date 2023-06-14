@@ -1,0 +1,127 @@
+What did I eat in X
+
+Select r.food_type
+from travel_dining-log.csv
+where city == X
+
+what are the most common foods I eat when I travel?
+
+Select TOP(n)
+from travel_dining-log.csv
+group_by food_type
+order_by count(dining_date)
+
+what are the most common foods I eat when I'm in Y?
+
+Select TOP(n)
+from travel_dining-log.csv as r
+where r.city == Y
+group_by food_type
+order_by count(dining_date)
+
+what did I eat on the day that I visited X
+
+select r.food_type
+from travel_dining-log.csv as r, travel_places_visited-log.csv as s
+where  s.place == X AND r.dining_date == s.place_visit_date
+
+
+
+start_date,end_date,city,dining_date,food_type,food_location,place_visit_date,place,people,action,emotion
+2017-01-19 00:00:00,2017-01-25 00:00:00,"Dubai, UAE",2017-01-20 00:00:00,dining,Hor Al Anz Bakery,2017/01/22,Miracle Garden,"parents, friends, family",recorded some videos,happy
+2017-01-19 00:00:00,2017-01-25 00:00:00,"Dubai, UAE",2017-01-22 00:00:00,street food,Falafel Alzaeem,2017/01/22,Miracle Garden,"parents, friends, family",recorded some videos,happy
+2017-01-19 00:00:00,2017-01-25 00:00:00,"Dubai, UAE",2017-01-23 00:00:00,street food,Falafel Alzaeem,2017/01/22,Miracle Garden,"parents, friends, family",recorded some videos,happy
+2017-01-19 00:00:00,2017-01-25 00:00:00,"Dubai, UAE",2017-01-24 00:00:00,local food,Hor Al Anz Bakery,2017/01/22,Miracle Garden,"parents, friends, family",recorded some videos,happy
+2017-01-19 00:00:00,2017-01-25 00:00:00,"Dubai, UAE",2017-01-25 00:00:00,local food,Hor Al Anz Bakery,2017/01/22,Miracle Garden,"parents, friends, family",recorded some videos,happy
+2017-04-27 00:00:00,2017-05-12 00:00:00,"Rome, Italy",2017-04-28 00:00:00,local food,Panificio Bonci,2017/05/02,The Pantheon,"parents, friends, family",took a selfie,impressed
+2017-04-27 00:00:00,2017-05-12 00:00:00,"Rome, Italy",2017-04-29 00:00:00,street food,Dar Filettaro,2017/05/02,The Pantheon,"parents, friends, family",took a selfie,impressed
+2017-04-27 00:00:00,2017-05-12 00:00:00,"Rome, Italy",2017-04-30 00:00:00,street food,Dar Filettaro,2017/05/02,The Pantheon,"parents, friends, family",took a selfie,impressed
+2017-04-27 00:00:00,2017-05-12 00:00:00,"Rome, Italy",2017-05-01 00:00:00,local food,Trapizzino,2017/05/02,The Pantheon,"parents, friends, family",took a selfie,impressed
+2017-04-27 00:00:00,2017-05-12 00:00:00,"Rome, Italy",2017-05-03 00:00:00,dining,Pizzarium,2017/05/02,The Pantheon,"parents, friends, family",took a selfie,impressed
+2017-04-27 00:00:00,2017-05-12 00:00:00,"Rome, Italy",2017-05-04 00:00:00,local food,Dar Filettaro,2017/05/02,The Pantheon,"parents, friends, family",took a selfie,impressed
+2017-04-27 00:00:00,2017-05-12 00:00:00,"Rome, Italy",2017-05-05 00:00:00,dining,Mozao,2017/05/02,The Pantheon,"parents, friends, family",took a selfie,impressed
+2017-04-27 00:00:00,2017-05-12 00:00:00,"Rome, Italy",2017-05-06 00:00:00,local food,Panificio Bonci,2017/05/02,The Pantheon,"parents, friends, family",took a selfie,impressed
+2017-04-27 00:00:00,2017-05-12 00:00:00,"Rome, Italy",2017-05-07 00:00:00,dining,Mozao,2017/05/02,The Pantheon,"parents, friends, family",took a selfie,impressed
+2017-04-27 00:00:00,2017-05-12 00:00:00,"Rome, Italy",2017-05-08 00:00:00,local food,Trapizzino,2017/05/02,The Pantheon,"parents, friends, family",took a selfie,impressed
+2017-04-27 00:00:00,2017-05-12 00:00:00,"Rome, Italy",2017-05-09 00:00:00,local food,Pizzarium,2017/05/02,The Pantheon,"parents, friends, family",took a selfie,impressed
+2017-04-27 00:00:00,2017-05-12 00:00:00,"Rome, Italy",2017-05-10 00:00:00,local food,Dar Filettaro,2017/05/02,The Pantheon,"parents, friends, family",took a selfie,impressed
+2017-04-27 00:00:00,2017-05-12 00:00:00,"Rome, Italy",2017-05-11 00:00:00,dining,Dar Filettaro,2017/05/02,The Pantheon,"parents, friends, family",took a selfie,impressed
+2017-04-27 00:00:00,2017-05-12 00:00:00,"Rome, Italy",2017-05-12 00:00:00,street food,Mozao,2017/05/02,The Pantheon,"parents, friends, family",took a selfie,impressed
+2018-02-06 00:00:00,2018-02-16 00:00:00,"London, UK",2018-02-08 00:00:00,dining,Broadway Market,2018/02/11,Westminster,"parents, friends, family",took a selfie,impressed
+2018-02-06 00:00:00,2018-02-16 00:00:00,"London, UK",2018-02-09 00:00:00,local food,Berwick Street Market,2018/02/11,Westminster,"parents, friends, family",took a selfie,impressed
+2018-02-06 00:00:00,2018-02-16 00:00:00,"London, UK",2018-02-10 00:00:00,street food,Brixton Village,2018/02/11,Westminster,"parents, friends, family",took a selfie,impressed
+2018-02-06 00:00:00,2018-02-16 00:00:00,"London, UK",2018-02-11 00:00:00,street food,Brixton Village,2018/02/11,Westminster,"parents, friends, family",took a selfie,impressed
+2018-02-06 00:00:00,2018-02-16 00:00:00,"London, UK",2018-02-12 00:00:00,street food,Brixton Village,2018/02/11,Westminster,"parents, friends, family",took a selfie,impressed
+2018-02-06 00:00:00,2018-02-16 00:00:00,"London, UK",2018-02-13 00:00:00,street food,Brixton Village,2018/02/11,Westminster,"parents, friends, family",took a selfie,impressed
+2018-02-06 00:00:00,2018-02-16 00:00:00,"London, UK",2018-02-15 00:00:00,street food,Bang Bang Oriental,2018/02/11,Westminster,"parents, friends, family",took a selfie,impressed
+2018-02-06 00:00:00,2018-02-16 00:00:00,"London, UK",2018-02-16 00:00:00,street food,Bang Bang Oriental,2018/02/11,Westminster,"parents, friends, family",took a selfie,impressed
+2018-05-28 00:00:00,2018-06-06 00:00:00,"Rome, Italy",2018-05-29 00:00:00,street food,Pizzarium,2018/06/02,The Pantheon,"parents, friends, family",took a group photo,impressed
+2018-05-28 00:00:00,2018-06-06 00:00:00,"Rome, Italy",2018-05-30 00:00:00,local food,Panificio Bonci,2018/06/02,The Pantheon,"parents, friends, family",took a group photo,impressed
+2018-05-28 00:00:00,2018-06-06 00:00:00,"Rome, Italy",2018-05-31 00:00:00,street food,Pizzarium,2018/06/02,The Pantheon,"parents, friends, family",took a group photo,impressed
+2018-05-28 00:00:00,2018-06-06 00:00:00,"Rome, Italy",2018-06-01 00:00:00,street food,Trapizzino,2018/06/02,The Pantheon,"parents, friends, family",took a group photo,impressed
+2018-05-28 00:00:00,2018-06-06 00:00:00,"Rome, Italy",2018-06-02 00:00:00,dining,Trapizzino,2018/06/02,The Pantheon,"parents, friends, family",took a group photo,impressed
+2018-05-28 00:00:00,2018-06-06 00:00:00,"Rome, Italy",2018-06-03 00:00:00,street food,Dar Filettaro,2018/06/02,The Pantheon,"parents, friends, family",took a group photo,impressed
+2018-05-28 00:00:00,2018-06-06 00:00:00,"Rome, Italy",2018-06-05 00:00:00,local food,Trapizzino,2018/06/02,The Pantheon,"parents, friends, family",took a group photo,impressed
+2018-05-28 00:00:00,2018-06-06 00:00:00,"Rome, Italy",2018-06-06 00:00:00,street food,Trapizzino,2018/06/02,The Pantheon,"parents, friends, family",took a group photo,impressed
+2019-05-11 00:00:00,2019-05-24 00:00:00,"Rome, Italy",2019-05-12 00:00:00,dining,Trapizzino,2019/05/16,Trevi Fountain,"parents, friends, family",bought some souvenirs,special
+2019-05-11 00:00:00,2019-05-24 00:00:00,"Rome, Italy",2019-05-14 00:00:00,street food,Trapizzino,2019/05/16,Trevi Fountain,"parents, friends, family",bought some souvenirs,special
+2019-05-11 00:00:00,2019-05-24 00:00:00,"Rome, Italy",2019-05-15 00:00:00,street food,Dar Filettaro,2019/05/16,Trevi Fountain,"parents, friends, family",bought some souvenirs,special
+2019-05-11 00:00:00,2019-05-24 00:00:00,"Rome, Italy",2019-05-16 00:00:00,street food,Trapizzino,2019/05/16,Trevi Fountain,"parents, friends, family",bought some souvenirs,special
+2019-05-11 00:00:00,2019-05-24 00:00:00,"Rome, Italy",2019-05-18 00:00:00,local food,Trapizzino,2019/05/16,Trevi Fountain,"parents, friends, family",bought some souvenirs,special
+2019-05-11 00:00:00,2019-05-24 00:00:00,"Rome, Italy",2019-05-20 00:00:00,local food,Mozao,2019/05/16,Trevi Fountain,"parents, friends, family",bought some souvenirs,special
+2019-05-11 00:00:00,2019-05-24 00:00:00,"Rome, Italy",2019-05-21 00:00:00,dining,Mozao,2019/05/16,Trevi Fountain,"parents, friends, family",bought some souvenirs,special
+2019-05-11 00:00:00,2019-05-24 00:00:00,"Rome, Italy",2019-05-22 00:00:00,dining,Panificio Bonci,2019/05/16,Trevi Fountain,"parents, friends, family",bought some souvenirs,special
+2019-05-11 00:00:00,2019-05-24 00:00:00,"Rome, Italy",2019-05-23 00:00:00,local food,Pizzarium,2019/05/16,Trevi Fountain,"parents, friends, family",bought some souvenirs,special
+2019-05-11 00:00:00,2019-05-24 00:00:00,"Rome, Italy",2019-05-24 00:00:00,dining,Mozao,2019/05/16,Trevi Fountain,"parents, friends, family",bought some souvenirs,special
+2019-07-31 00:00:00,2019-08-10 00:00:00,"New York, US",2019-08-02 00:00:00,local food,Korilla BBQ,2019/08/07,Central Park,"parents, friends, family",bought some souvenirs,happy
+2019-07-31 00:00:00,2019-08-10 00:00:00,"New York, US",2019-08-03 00:00:00,dining,Melt Bakery,2019/08/07,Central Park,"parents, friends, family",bought some souvenirs,happy
+2019-07-31 00:00:00,2019-08-10 00:00:00,"New York, US",2019-08-04 00:00:00,dining,The Cinnamon Snail,2019/08/07,Central Park,"parents, friends, family",bought some souvenirs,happy
+2019-07-31 00:00:00,2019-08-10 00:00:00,"New York, US",2019-08-05 00:00:00,local food,Nuts 4 Nuts,2019/08/07,Central Park,"parents, friends, family",bought some souvenirs,happy
+2019-07-31 00:00:00,2019-08-10 00:00:00,"New York, US",2019-08-07 00:00:00,dining,Nuts 4 Nuts,2019/08/07,Central Park,"parents, friends, family",bought some souvenirs,happy
+2019-07-31 00:00:00,2019-08-10 00:00:00,"New York, US",2019-08-08 00:00:00,local food,Melt Bakery,2019/08/07,Central Park,"parents, friends, family",bought some souvenirs,happy
+2019-07-31 00:00:00,2019-08-10 00:00:00,"New York, US",2019-08-10 00:00:00,local food,Melt Bakery,2019/08/07,Central Park,"parents, friends, family",bought some souvenirs,happy
+2020-04-22 00:00:00,2020-05-07 00:00:00,"Dubai, UAE",2020-04-26 00:00:00,dining,Hor Al Anz Bakery,2020/04/25,Burj Khalifa,"parents, friends, family",took a selfie,impressed
+2020-04-22 00:00:00,2020-05-07 00:00:00,"Dubai, UAE",2020-04-28 00:00:00,local food,Hor Al Anz Bakery,2020/04/25,Burj Khalifa,"parents, friends, family",took a selfie,impressed
+2020-04-22 00:00:00,2020-05-07 00:00:00,"Dubai, UAE",2020-04-29 00:00:00,local food,Sind Punjab,2020/04/25,Burj Khalifa,"parents, friends, family",took a selfie,impressed
+2020-04-22 00:00:00,2020-05-07 00:00:00,"Dubai, UAE",2020-05-01 00:00:00,dining,Falafel Alzaeem,2020/04/25,Burj Khalifa,"parents, friends, family",took a selfie,impressed
+2020-04-22 00:00:00,2020-05-07 00:00:00,"Dubai, UAE",2020-05-04 00:00:00,dining,Hor Al Anz Bakery,2020/04/25,Burj Khalifa,"parents, friends, family",took a selfie,impressed
+2020-04-22 00:00:00,2020-05-07 00:00:00,"Dubai, UAE",2020-05-05 00:00:00,local food,Falafel Alzaeem,2020/04/25,Burj Khalifa,"parents, friends, family",took a selfie,impressed
+2020-04-22 00:00:00,2020-05-07 00:00:00,"Dubai, UAE",2020-05-07 00:00:00,street food,Sind Punjab,2020/04/25,Burj Khalifa,"parents, friends, family",took a selfie,impressed
+2020-06-27 00:00:00,2020-07-11 00:00:00,"Bangkok, Thailand",2020-06-28 00:00:00,dining,Yaowarat,2020/07/02,Grand Palace,"parents, friends, family",took a selfie,special
+2020-06-27 00:00:00,2020-07-11 00:00:00,"Bangkok, Thailand",2020-06-29 00:00:00,street food,Yaowarat,2020/07/02,Grand Palace,"parents, friends, family",took a selfie,special
+2020-06-27 00:00:00,2020-07-11 00:00:00,"Bangkok, Thailand",2020-06-30 00:00:00,local food,Victory Monument,2020/07/02,Grand Palace,"parents, friends, family",took a selfie,special
+2020-06-27 00:00:00,2020-07-11 00:00:00,"Bangkok, Thailand",2020-07-01 00:00:00,dining,Victory Monument,2020/07/02,Grand Palace,"parents, friends, family",took a selfie,special
+2020-06-27 00:00:00,2020-07-11 00:00:00,"Bangkok, Thailand",2020-07-02 00:00:00,local food,Yaowarat,2020/07/02,Grand Palace,"parents, friends, family",took a selfie,special
+2020-06-27 00:00:00,2020-07-11 00:00:00,"Bangkok, Thailand",2020-07-03 00:00:00,dining,Ratchawat Market,2020/07/02,Grand Palace,"parents, friends, family",took a selfie,special
+2020-06-27 00:00:00,2020-07-11 00:00:00,"Bangkok, Thailand",2020-07-04 00:00:00,dining,Ratchawat Market,2020/07/02,Grand Palace,"parents, friends, family",took a selfie,special
+2020-06-27 00:00:00,2020-07-11 00:00:00,"Bangkok, Thailand",2020-07-05 00:00:00,dining,Victory Monument,2020/07/02,Grand Palace,"parents, friends, family",took a selfie,special
+2020-06-27 00:00:00,2020-07-11 00:00:00,"Bangkok, Thailand",2020-07-07 00:00:00,local food,Yaowarat,2020/07/02,Grand Palace,"parents, friends, family",took a selfie,special
+2020-06-27 00:00:00,2020-07-11 00:00:00,"Bangkok, Thailand",2020-07-08 00:00:00,local food,Victory Monument,2020/07/02,Grand Palace,"parents, friends, family",took a selfie,special
+2020-06-27 00:00:00,2020-07-11 00:00:00,"Bangkok, Thailand",2020-07-09 00:00:00,local food,Victory Monument,2020/07/02,Grand Palace,"parents, friends, family",took a selfie,special
+2020-06-27 00:00:00,2020-07-11 00:00:00,"Bangkok, Thailand",2020-07-10 00:00:00,local food,Yaowarat,2020/07/02,Grand Palace,"parents, friends, family",took a selfie,special
+2020-06-27 00:00:00,2020-07-11 00:00:00,"Bangkok, Thailand",2020-07-11 00:00:00,local food,Yaowarat,2020/07/02,Grand Palace,"parents, friends, family",took a selfie,special
+2021-02-25 00:00:00,2021-03-04 00:00:00,"Philadelphia, US",2021-02-27 00:00:00,local food,Wood Street Pizza,2021/03/02,Philadelphia Museum of Art,"parents, friends, family",recorded some videos,special
+2021-02-25 00:00:00,2021-03-04 00:00:00,"Philadelphia, US",2021-02-28 00:00:00,local food,Wood Street Pizza,2021/03/02,Philadelphia Museum of Art,"parents, friends, family",recorded some videos,special
+2021-02-25 00:00:00,2021-03-04 00:00:00,"Philadelphia, US",2021-03-01 00:00:00,local food,High Street Philly,2021/03/02,Philadelphia Museum of Art,"parents, friends, family",recorded some videos,special
+2021-02-25 00:00:00,2021-03-04 00:00:00,"Philadelphia, US",2021-03-02 00:00:00,local food,Lunch Street,2021/03/02,Philadelphia Museum of Art,"parents, friends, family",recorded some videos,special
+2021-02-25 00:00:00,2021-03-04 00:00:00,"Philadelphia, US",2021-03-03 00:00:00,local food,Wokworks City Hall Food Cart,2021/03/02,Philadelphia Museum of Art,"parents, friends, family",recorded some videos,special
+2021-05-07 00:00:00,2021-05-18 00:00:00,"New Delhi, India",2021-05-08 00:00:00,street food,Moolchand,2021/05/12,The Lotus Temple,"parents, friends, family",recorded some videos,happy
+2021-05-07 00:00:00,2021-05-18 00:00:00,"New Delhi, India",2021-05-10 00:00:00,street food,Yashwant Place,2021/05/12,The Lotus Temple,"parents, friends, family",recorded some videos,happy
+2021-05-07 00:00:00,2021-05-18 00:00:00,"New Delhi, India",2021-05-11 00:00:00,dining,Chawri Bazar,2021/05/12,The Lotus Temple,"parents, friends, family",recorded some videos,happy
+2021-05-07 00:00:00,2021-05-18 00:00:00,"New Delhi, India",2021-05-12 00:00:00,street food,Chandni Chowk,2021/05/12,The Lotus Temple,"parents, friends, family",recorded some videos,happy
+2021-05-07 00:00:00,2021-05-18 00:00:00,"New Delhi, India",2021-05-13 00:00:00,dining,Yashwant Place,2021/05/12,The Lotus Temple,"parents, friends, family",recorded some videos,happy
+2021-05-07 00:00:00,2021-05-18 00:00:00,"New Delhi, India",2021-05-15 00:00:00,local food,Chawri Bazar,2021/05/12,The Lotus Temple,"parents, friends, family",recorded some videos,happy
+2021-05-07 00:00:00,2021-05-18 00:00:00,"New Delhi, India",2021-05-16 00:00:00,street food,Chawri Bazar,2021/05/12,The Lotus Temple,"parents, friends, family",recorded some videos,happy
+2021-05-07 00:00:00,2021-05-18 00:00:00,"New Delhi, India",2021-05-18 00:00:00,dining,Moolchand,2021/05/12,The Lotus Temple,"parents, friends, family",recorded some videos,happy
+2022-05-19 00:00:00,2022-05-25 00:00:00,"Bangkok, Thailand",2022-05-20 00:00:00,street food,Ratchawat Market,2022/05/24,National Museum & Wang Na Palace,"parents, friends, family",took a selfie,happy
+2022-05-19 00:00:00,2022-05-25 00:00:00,"Bangkok, Thailand",2022-05-21 00:00:00,local food,Ratchawat Market,2022/05/24,National Museum & Wang Na Palace,"parents, friends, family",took a selfie,happy
+2022-05-19 00:00:00,2022-05-25 00:00:00,"Bangkok, Thailand",2022-05-23 00:00:00,street food,Victory Monument,2022/05/24,National Museum & Wang Na Palace,"parents, friends, family",took a selfie,happy
+2022-05-19 00:00:00,2022-05-25 00:00:00,"Bangkok, Thailand",2022-05-24 00:00:00,dining,Ratchawat Market,2022/05/24,National Museum & Wang Na Palace,"parents, friends, family",took a selfie,happy
+2022-05-19 00:00:00,2022-05-25 00:00:00,"Bangkok, Thailand",2022-05-25 00:00:00,dining,Yaowarat,2022/05/24,National Museum & Wang Na Palace,"parents, friends, family",took a selfie,happy
+2022-07-22 00:00:00,2022-07-29 00:00:00,"Barcelona, Spain",2022-07-23 00:00:00,local food,Pizza Market,,,,,
+2022-07-22 00:00:00,2022-07-29 00:00:00,"Barcelona, Spain",2022-07-24 00:00:00,local food,Pizza Market,,,,,
+2022-07-22 00:00:00,2022-07-29 00:00:00,"Barcelona, Spain",2022-07-25 00:00:00,local food,Bar Bo de B,,,,,
+2022-07-22 00:00:00,2022-07-29 00:00:00,"Barcelona, Spain",2022-07-26 00:00:00,local food,Pizza Market,,,,,
+2022-07-22 00:00:00,2022-07-29 00:00:00,"Barcelona, Spain",2022-07-27 00:00:00,local food,Pizza Del Born,,,,,
+2022-07-22 00:00:00,2022-07-29 00:00:00,"Barcelona, Spain",2022-07-28 00:00:00,street food,Ciutat Comtal,,,,,
+2022-07-22 00:00:00,2022-07-29 00:00:00,"Barcelona, Spain",2022-07-29 00:00:00,street food,Maoz,,,,,
