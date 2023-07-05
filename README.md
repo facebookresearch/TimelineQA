@@ -4,9 +4,15 @@
 TimelineQA is a benchmark for accelerating progress on querying lifelogs. TimelineQA can generate lifelogs of imaginary people. The episodes in the lifelog
 range from major life episodes such as high school graduation to those that occur on a daily basis such as going for a run.
 
-Please refer to this paper (((addlink))) for more information.
-
-((( add description and link to benchmark used for our experiments )))
+TimelineQA Reference --- [https://arxiv.org/abs/2306.01069](https://arxiv.org/abs/2306.01069):
+```
+@article{tan2023timelineqa,
+      title={TimelineQA: A Benchmark for Question Answering over Timelines},
+      author={Wang-Chiew Tan and Jane Dwivedi-Yu and Yuliang Li and Lambert Mathias and Marzieh Saeidi and Jing Nathan Yan and Alon Y. Halevy},
+      journal={arXiv preprint:2306.01069},
+      year={2023}
+}
+```
 
 **Disclaimer**: We recognize that the lifelogs generated in this work are far from being exhaustively comprehensive. While we strived to make the lifelogs complex enough to benchmark and compare current state-of-the-art, these lifelogs would not be considered diverse in the sense that a social scientist would note, and are likely biased by the life experiences of its creators. We encourage future work in creating lifelogs that are more inclusive and faithful to all walks of life. This includes further work in making lifelogs that are more diverse in terms of life experiences, personas, and queries as well as more granular and complex in detail.
 
